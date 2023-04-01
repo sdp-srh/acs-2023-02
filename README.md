@@ -1,1 +1,2 @@
-# acs-2023-02
+# Repository for Advanced Computer Science
+Here all coding for the course Advanced Computer Science is available.
