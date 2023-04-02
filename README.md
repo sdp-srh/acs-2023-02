@@ -32,6 +32,14 @@ node index.js
 See https://expressjs.com/en/starter/hello-world.html  
 
 ## Add to git
-We have already a repository connected.  
-Create a .gitignore file.
-Add node_modules folder to .gitignore
+We have already a repository connected.   
+Create a .gitignore file.  
+Add node_modules folder to .gitignore  
+
+Git commands  
+```
+git add .
+git commit -m "initial setup"
+git push
+```
+
