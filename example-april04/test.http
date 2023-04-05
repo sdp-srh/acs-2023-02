@@ -1,0 +1,14 @@
+@server=https://acs-2023-02.ue.r.appspot.com
+// @server=http://localhost:3000
+
+
+### Test greeting
+GET {{server}}/greeting
+
+### Test greeting
+POST {{server}}/sum
+Content-Type: application/json
+
+{
+    "numbers": "[1,2,5,2,5,1]"
+}
