@@ -43,3 +43,23 @@ git commit -m "initial setup"
 git push
 ```
 
+# GCP Google Cloud
+Create a project  
+
+Install the Command Line Tools from:  
+https://cloud.google.com/sdk/docs/install
+
+### Initialize gcloud with your credentials and project
+```
+gcloud init
+```
+
+### Deploy your project
+```
+gcloud app deploy
+```
+
+### Test your project
+```
+gcloud app browse
+```
