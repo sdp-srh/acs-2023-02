@@ -10,5 +10,6 @@ POST {{server}}/sum
 Content-Type: application/json
 
 {
-    "numbers": "[1,2,5,2,5,1]"
+    "numbers": "[1,2,5,2,5,1]",
+    "factor": "5"
 }

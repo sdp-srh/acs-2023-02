@@ -1,0 +1,18 @@
+{
+  "name": "acs",
+  "version": "1.0.0",
+  "description": "testing for acs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "deploy": "gcloud app deploy",
+    "browse": "gcloud app browse",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paul Tanzer",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  }
+}
