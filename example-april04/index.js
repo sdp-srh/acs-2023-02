@@ -23,11 +23,8 @@ app.post('/sum', async (req,res)=> {
   let result = 0
   numbers.forEach(n => { result += n })
   console.log(result)
-  
   res.send({ result: result}) 
 })
-
-
 
 
 app.listen(port, () => {
