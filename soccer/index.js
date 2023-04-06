@@ -74,6 +74,7 @@ app.get('/team', (req, res) => {
 app.get('/team/:id', (req, res) => {
   const requestId = req.params.id
   console.log(`Looking for Team with id: ${requestId}`)
+  // should be handled in database by querying at the team id
   const result = teams.find(team => team.id === requestId)
   res.send(result)
 })
@@ -87,7 +88,7 @@ app.get('/match', (req,res) => {
 })
 
 
-// find a team with an ID
+// find a match with an ID
 app.get('/match/:id', (req, res) => {
   const requestId = req.params.id
   console.log(`Looking for Team with id: ${requestId}`)
@@ -134,6 +135,9 @@ app.delete('/match/:id', (req, res) => {
 // finds matches based on the team names and the start data by string matching
 app.get('/findmatches', (req, res) => {
   const term = req.query.term
+  console.log(term)
+  const results = []
+  /*
   const results = matches.filter(match => {
     if (match.startDate.toLowerCase().includes(term.toLowerCase())) return true
     const name1 = teams.find(team => team.id = match.team1)
@@ -142,6 +146,7 @@ app.get('/findmatches', (req, res) => {
     if (name2.toLowerCase().includes(term.toLowerCase())) return true
     return false
   })
+  */
   res.send(results)
 })
 

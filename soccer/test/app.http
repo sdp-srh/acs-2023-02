@@ -23,7 +23,7 @@ Content-Type: application/json
 
   {
     "id": "{{newmatchid}}",
-    "startDate": "2023-03-01",
+    "startDate": "2023-04-06",
     "matchDay": 15,
     "team1": "d389b8d3-254a-4925-8fb5-667520035eaf",
     "team2": "9a664089-2e4b-4c56-af71-5b96d2c9d187",
@@ -37,7 +37,7 @@ PATCH {{server}}/match/{{newmatchid}}
 Content-Type: application/json
 
   {
-    "startDate": "2023-04-01"
+    "startDate": "2023-04-10"
   }
 
 ### add a result to a match
@@ -53,6 +53,16 @@ Content-Type: application/json
 ### delete match with id
 DELETE {{server}}/match/{{newmatchid}}
 
+
+### options of root
+OPTIONS {{server}}/
+
+### Head of root
+HEAD {{server}}/
+
+
+### GET of root
+GET {{server}}/
 
 ### options of match endpoint
 OPTIONS {{server}}/match/
