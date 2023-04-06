@@ -5,6 +5,8 @@
 
 // include libraries for microservices and file handling
 const express = require('express')
+
+
 const bodyParser = require('body-parser')
 const fs = require('fs')
 const path = require('path')
@@ -12,10 +14,10 @@ const path = require('path')
 
 // start express app
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 // include body parser for easier handling of json in the request
-app.use(bodyParser.json())
+app.use(express.json())
 
 // set the correct header information
 app.use((req, res, next) => {
@@ -64,7 +66,7 @@ app.get('/', (req, res) => {
 
 // gets all teams
 app.get('/team', (req, res) => {
-  res.json(teams)
+  res.send(teams)
 })
 
 
@@ -73,7 +75,7 @@ app.get('/team/:id', (req, res) => {
   const requestId = req.params.id
   console.log(`Looking for Team with id: ${requestId}`)
   const result = teams.find(team => team.id === requestId)
-  res.json(result)
+  res.send(result)
 })
 
 
@@ -81,7 +83,7 @@ app.get('/team/:id', (req, res) => {
  * match endpoints
  */
 app.get('/match', (req,res) => {
-  res.json(matches)
+  res.send(matches)
 })
 
 
@@ -90,7 +92,7 @@ app.get('/match/:id', (req, res) => {
   const requestId = req.params.id
   console.log(`Looking for Team with id: ${requestId}`)
   const result = matches.find(match => match.id === requestId)
-  res.json(result)
+  res.send(result)
 })
 
 // creates a new match

@@ -18,12 +18,13 @@ app.get('/greeting', (req, res) => {
 
 app.post('/sum', async (req,res)=> {
   const body = req.body
-  const numbers = JSON.parse(body.numbers)
+  const numbers = body.numbers
   console.log(numbers)
   let result = 0
   numbers.forEach(n => { result += n })
   console.log(result)
-  res.send(`The result is ${result}`)
+  
+  res.send({ result: result}) 
 })
 
 
