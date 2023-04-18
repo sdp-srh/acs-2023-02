@@ -11,13 +11,15 @@ functions.http('load-openliga-data', async (req, res) => {
   const teams = teamResponse.data
   for (const team of teams) {
     // TODO store the teams data in nosql database (firestore)
-    console.log(team)
+    // console.log(team)
   }
   const matchResponse = await  axios.get(`https://www.openligadb.de/api/getmatchdata/${league}/${season}`)
   const matches = matchResponse.data
   let message = `Loaded matches ${matches.length} from OpenLigaDB`
   for (const match of matches) {
-    console.log(matches)
+    // TODO store in firestore
+    // console.log(matches)
   }
+  console.log(`matches (${matches.length}), teams (${teams.length})`)
   res.send({status:'OK', message: message })
 })
