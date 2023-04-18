@@ -5,6 +5,7 @@
 
 // include libraries for microservices and file handling
 const express = require('express')
+const { Firestore } = require('@google-cloud/firestore')
 
 
 const bodyParser = require('body-parser')
@@ -65,7 +66,12 @@ app.get('/', (req, res) => {
  */
 
 // gets all teams
-app.get('/team', (req, res) => {
+app.get('/team', async (req, res) => {
+  const firestore = new Firestore()
+  const snapshot = await firestore.collection('teams').get()
+  // convert the docs to teams objects
+  const allDocsFromDb = snapshot.docs
+  const teams = snapshot.docs.map(doc => doc.data())
   res.send(teams)
 })
 
