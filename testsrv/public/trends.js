@@ -6,7 +6,7 @@ const init = () => {
 
 
 const readTrends = async () =>{
-  const response = await fetch('/google-trends')
+  const response = await fetch('/api/google-trends')
   const trends = await response.json()  
   let html = ''
   trends.results.forEach(trend => {

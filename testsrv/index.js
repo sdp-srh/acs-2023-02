@@ -4,7 +4,7 @@ const path = require('path')
 
 const {Translate} = require('@google-cloud/translate').v2
 
-// const { BigQuery } = require('@google-cloud/bigquery');
+const { BigQuery } = require('@google-cloud/bigquery');
 
 
 
@@ -46,16 +46,16 @@ app.post('/api/en2de', async (req, res) => {
   const [translation] = await translate.translate(source, options);
   res.send({translation: translation})
 })
-/*
+
 // big data query endpoint
 app.get('/api/google-trends', async (req, res) => {
   const trends = await readTrends()
   res.send({ amount: trends.length, results: trends})
 })
-*/
+
 
 // reads the news from the big query service
-/*
+
 const readTrends = async () => {
   const bigquery = new BigQuery()
   
@@ -80,7 +80,7 @@ const readTrends = async () => {
   return rows;
 }
 
-*/
+
 
 app.listen(port, async () => {
   console.log(`test service is running on ${port}`)
