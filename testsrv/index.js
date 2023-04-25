@@ -20,7 +20,7 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')))
 
 // configre express that it loads the data from the vue project folder (dist)
-// app.use(express.static(path.join(__dirname, './vue-app/dist')));
+app.use(express.static(path.join(__dirname, './vue-app/dist')));
 
 
 
@@ -70,7 +70,7 @@ const readTrends = async () => {
         rank = 1
             -- Choose only the top term each day.
         AND refresh_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 WEEK)
-            -- Filter to the last 2 weeks.
+            -- Filter to the last 1 weeks.
       GROUP BY Day, Top_Term, rank
       ORDER BY Day DESC
         -- Show the days in reverse chronological order.  
